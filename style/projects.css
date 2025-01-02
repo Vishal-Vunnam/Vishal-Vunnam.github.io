@@ -1,0 +1,87 @@
+/* Resetting default margins and paddings */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Background styling */
+body {
+    background: url('/img/space.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+img {
+    border: 1px solid white;
+    max-height: 150px;
+    object-fit: contain;
+}
+.back a {
+    font-size: 24px; /* Optional: Adjust font size */
+    font-weight: bold; /* Optional: Make the text bold */
+    
+    background-size: 400% 400%; /* Stretch the gradient to make it go through different colors */
+    background-clip: text; /* Clip the background to the text */
+    color: blue; /* Make the text color transparent to show the gradient */
+    text-decoration: none; /* Remove the underline */
+    display: inline-block; /* Ensure the text is treated as a block-level element */
+    animation: colorCycle 110s; /* Animate the background */
+}
+.back a:hover {
+    filter:invert(); /* Pause the animation on hover */
+    font-style: italic;
+}
+
+
+/* Main screen styling */
+/* Main screen styling */
+.main-screen {
+    background-color: rgba(0, 0, 0, 0.9); /* Black with slight transparency */
+    color: white;
+    border: 1px solid white;
+    width: 80%;
+    max-width: 1200px;
+    height: 100vh; /* Full viewport height */
+    margin: 0 auto; /* Center horizontally */
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns of equal width */
+    gap: 0; /* No gap between grid items to align borders */
+}
+h3 {
+    text-decoration: underline;
+}
+
+/* Add lines between grid items */
+.main-screen > * {
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Remove border on the last row and last column */
+.main-screen > :nth-child(3n) { /* Last column in each row */
+    border-right: none;
+}
+.main-screen > :nth-last-child(-n+3) { /* Last row items */
+    border-bottom: none;
+}
+
+/* Project card styling */
+.project-card {
+    padding: 20px;
+    height: 100px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;    
+   
+    
+}
+.project-card a {
+    color: rgb(255, 255, 255);
+    font-style: none;
+    text-decoration: none;
+}
+.project-card a:hover {
+    color: rgb(255, 247, 0);
+    text-shadow: 0px 2px 2px rgb(239, 244, 75);
+    
+}

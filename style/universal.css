@@ -1,0 +1,225 @@
+/* Universal Styling */
+body {
+    margin: 0;
+    box-sizing: border-box;
+    display: grid;
+    height: 100vh; /* Make sure the body takes the full height */
+}
+
+/* Main Layout */
+.main {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "menu content"
+      "footer footer";
+    grid-template-columns: 1fr 3fr;
+    gap: 5px;
+    padding: 5px;
+}
+
+/* Logo Styling */
+.main > div.logo {
+    font-size: large;
+    grid-area: header;
+    display: grid; /* Make header a grid to place logo and links side by side */
+    grid-template-columns: auto 1fr; /* 1st column for the logo, 2nd for the links */
+    align-items: center; /* Vertically center the content */
+    justify-items: start; /* Keep the logo to the left */
+    padding: 10px;
+}
+
+/* Nav Links Styling */
+.logo {
+    font-family: 'jsMath-cmti10', sans-serif;
+    font-size: x-large;
+    display: flex;
+    flex-direction: row; /* Change this to row to make links horizontal */
+    justify-content: start;
+    padding: 10px;
+}
+
+.logo ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 15px; /* Space between links */
+    padding-right: 30px; /* Add padding to the right side of the links */
+    padding-left: 20px; /* Add padding to the right side of the links */
+    border-right: 2px solid #ccc; /* Add a border to the right of each link */
+}
+.header li {
+    margin-right: 10px; /* Space between links */
+    padding-right: 4px; /* Add padding to the right side of the links */
+}
+.header {
+    font-size: xxx-large;
+    padding-right: 40px; 
+    padding-left: 40px; 
+}
+
+.nav-links li:last-child {
+    border-right: none; /* Remove the border for the last link */
+}
+
+.nav-links a {
+    font-size: x-large;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.contact-info {
+    font-family: 'jsMath-cmti10', sans-serif;
+    top: 50px; /* Adjust based on where your nav bar is */
+    right: 350px;
+    display: none; /* Initially hidden */
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    color: black;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+
+}
+.contact-info.visible {
+    display: block; /* Show when the class is added */
+}
+.contact-info p {
+    margin: 10px 0;
+    font-size: 17px;
+}
+
+.contact-info a {
+    margin: 10px 0;
+    font-size: 17px;
+}
+.main > div.profile {
+    grid-area: menu;
+    display: flex;
+    justify-content: center; /* Center the profile picture */
+
+}
+.nav-links a:hover {
+    font-size: 150%; /* Make font larger on hover */
+    text-decoration: underline; /* Add underline on hover */
+    font-style: italic; /* Optionally change the font style */
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+    font-size: 110%;
+}
+
+/* Profile Styling */
+.main > div.profile {
+    grid-area: menu;
+    display: flex;
+    justify-content: center; /* Center the profile picture */
+    margin-top: 10px; /* Move the profile section down by 20px */
+}
+
+/* About Section Styling */
+.main > div.content .about {
+    font-family: 'Libre Baskerville';
+    margin-top: 60px; /* Move the about section down by 20px */
+    width: 700px;
+}
+
+/* Profile Image Styling */
+.main > div.profile img {
+    width: 200px; /* Set the width of the profile picture */
+    height: 250px; /* Set the height to make it square */
+    object-fit: cover; /* Ensures the image covers the circle without distortion */
+}
+
+.profile img {
+}
+
+.profile img:hover {
+    box-shadow: rgb(239, 14, 14) 5px 5px 10px; /* Add a shadow to the profile picture */
+    filter: invert(1); 
+}
+
+/* For Phone */
+
+/* Responsive Design for Phones */
+@media (max-width: 768px) {
+    body {
+        display: flex; /* Use flex for a single-column layout */
+        flex-direction: column; /* Stack elements vertically */
+        height: auto; /* Allow height to adjust */
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        gap: 10px; /* Add spacing between sections */
+        padding: 10px;
+    }
+
+    /* Logo Section */
+    .main > div.logo {
+        font-size: medium;
+        grid-template-columns: 1fr; /* Stack logo and links */
+        justify-items: center; /* Center align items */
+        padding: 5px;
+    }
+
+    /* Nav Links */
+    .nav-links ul {
+        flex-direction: column; /* Stack links vertically */
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin-right: 0; /* Remove right margin */
+        padding: 10px; /* Add padding for touch-friendly UI */
+        border-right: none; /* Remove border on phones */
+    }
+
+    .nav-links a {
+        font-size: medium; /* Reduce font size */
+    }
+
+    /* Contact Info */
+    .contact-info {
+        position: absolute; /* Ensure it can be positioned */
+        left: 0; /* Stick to the left of the screen */
+        top: 100px; /* Adjust vertical placement */
+        width: 20%; /* Set desired width */
+        height: auto; /* Allow dynamic height */
+        font-size: 10px; /* Adjust font size */
+        padding: 15px; /* Optional padding for content */
+        box-sizing: border-box; /* Include padding in width/height */
+        background-color: white; /* Optional: Add a background for better visibility */
+        z-index: 1000; /* Ensure it appears above other elements */
+    }
+
+    /* Profile Section */
+    .main > div.profile {
+        margin-top: 0; /* Remove extra margin */
+    }
+
+    .main > div.profile img {
+        width: 150px; /* Reduce image size */
+        height: 200px; /* Adjust aspect ratio */
+    }
+
+    /* About Section */
+    .main > div.content .about {
+        margin-top: 20px; /* Adjust spacing */
+        width: 90%; /* Adjust width for smaller screens */
+        font-size: small; /* Smaller font size */
+        text-align: center; /* Center align text */
+    }
+}
