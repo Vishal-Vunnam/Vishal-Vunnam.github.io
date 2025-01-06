@@ -3,15 +3,15 @@ const projects = [
         img: "/img/league-page.png",
         title: "ScoreSpot",
         link: "https://github.com/vishalvunnam1/ScoreSpot",
-        video: "https://example.com/video",
+        video: "https://drive.google.com/file/d/1RUWH5i3TjjXcMa7Osb9b2u6XxYxmZhZc/view?usp=sharing",
         description: "ScoreSpot is your all-in-one destination for soccer stats, live game coverage, and team involevement."
     },
     {
         img: "/img/IMG_4374.jpg",
         title: "MIDI Drum Kit",
         link: "https://github.com/vishalvunnam1/MIDIDrumKit",
-        video: "https://example.com/video",
-        description: "Short description of MIDI Drum Kit."
+        video: "https://drive.google.com/file/d/1UEt-WDiX_0FNeBJO6ARFE_o8q73-7gdB/view?usp=sharing",
+        description: "Midi drum kit created with Arduino io and processing; Built using piezo sensors, old cd's and a wooden encasing. "
     }
 ];
 

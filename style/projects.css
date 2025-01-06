@@ -3,18 +3,25 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 4fr; 
 }
 
 /* Background styling */
 body {
-    background: url('/img/space.jpg') no-repeat center center fixed;
+    /* background: url('/img/space.jpg') no-repeat center center fixed; */
+    /* background: url('/img/image\ copy.png') no-repeat center center fixed; */
+    background-color: rgb(0, 0, 0);
     background-size: cover;
     font-family: Arial, sans-serif;
 }
+.profilepic img {
+    transform: scaleX(-1);     /* Maintain aspect ratio while covering the assigned space */
+}
 img {
-    border: 1px solid white;
-    max-height: 150px;
-    object-fit: contain;
+    width: 100%;           /* Make images stretch to the full width of the parent container */
+    height: 180px;         /* Set a fixed height for all images */
+    object-fit: cover;
 }
 .back a {
     font-size: 24px; /* Optional: Adjust font size */
@@ -22,66 +29,84 @@ img {
     
     background-size: 400% 400%; /* Stretch the gradient to make it go through different colors */
     background-clip: text; /* Clip the background to the text */
-    color: blue; /* Make the text color transparent to show the gradient */
+    color: rgb(3, 171, 0); /* Make the text color transparent to show the gradient */
     text-decoration: none; /* Remove the underline */
     display: inline-block; /* Ensure the text is treated as a block-level element */
     animation: colorCycle 110s; /* Animate the background */
 }
 .back a:hover {
-    filter:invert(); /* Pause the animation on hover */
-    font-style: italic;
+    text-decoration: underline; /* Pause the animation on hover */
+}
+.profilepic img {
+    image-rendering: pixelated;  /* This makes the image appear pixelated */
+    width: 90%;                        /* Set width of the profile picture */
+    height: 90%;                       /* Set height of the profile picture */                 /* Makes the image round */
+    margin: 10px;                        /* Adds space around the image */             /* White border around the image */
+    object-fit: cover;                   /* Ensures the image fills the circle without stretching */
+    filter: grayscale(100%);             /* Makes the image black and white */
+
 }
 
+.index{
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 250px; 
+    justify-content: center;
+
+}
 
 /* Main screen styling */
 /* Main screen styling */
 .main-screen {
-    background-color: rgba(0, 0, 0, 0.9); /* Black with slight transparency */
-    color: white;
-    border: 1px solid white;
+    color: rgb(0, 0, 0);
+    /* border: 1px solid white; */
+
     width: 80%;
     max-width: 1200px;
     height: 100vh; /* Full viewport height */
     margin: 0 auto; /* Center horizontally */
     padding: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columns of equal width */
     gap: 0; /* No gap between grid items to align borders */
+}
+.main-screen img{
+    box-shadow: 0 0 10px rgb(231, 0, 0); /* Add a shadow effect */
 }
 h3 {
     text-decoration: underline;
 }
 
 /* Add lines between grid items */
-.main-screen > * {
-    border-right: 1px solid rgba(255, 255, 255, 0.3);
-}
 
 /* Remove border on the last row and last column */
-.main-screen > :nth-child(3n) { /* Last column in each row */
-    border-right: none;
-}
-.main-screen > :nth-last-child(-n+3) { /* Last row items */
-    border-bottom: none;
-}
 
 /* Project card styling */
 .project-card {
-    padding: 20px;
-    height: 100px;
+    background-color: rgba(0, 0, 0, 0.9); /* Increase opacity */
+    padding: 10px;
+    margin: 20px;
+    height: 300px;
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;    
-   
-    
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 1px solid rgb(255, 255, 255); /* Blue line at the top */
+    border-bottom: 1px solid rgb(255, 255, 255);
+    box-shadow: 0 0 3px rgb(255, 255, 255); /* Add a shadow effect */
+
 }
-.project-card a {
-    color: rgb(255, 255, 255);
+
+ a, p, h3, h2 {
+    color: rgb(6, 6, 6);
     font-style: none;
     text-decoration: none;
+    font-family: Consolas, Courier, monospace;
+    color: rgb(3, 171, 0);
+    text-shadow: 0px 0px 10px rgb(3, 171, 0);
 }
 .project-card a:hover {
-    color: rgb(255, 247, 0);
-    text-shadow: 0px 2px 2px rgb(239, 244, 75);
+    text-decoration: underline;
     
 }
+.linked:hover {
+  text-decoration: underline;
+}
+ 
