@@ -1,5 +1,10 @@
 const projects = [
     {
+      title: "Python to x86 Assembly Compiler",
+      link: "https://github.com/Vishal-Vunnam/python-to-x86-compiler",
+      description: " Python to asm compiler written in Python 3.10. Supports dynamic typing, higher-order functions and register allocation optimizations. "
+    },
+    {
         img: "/img/league-page.png",
         title: "ScoreSpot",
         link: "https://github.com/vishalvunnam1/ScoreSpot",
@@ -26,10 +31,12 @@ function renderProjects() {
         card.style.marginBottom = '20px';
 
         const img = document.createElement('img');
-        img.src = project.img;
-        img.alt = project.title;
-        img.style.width = "300px";
-        img.style.marginBottom = "10px";
+        if (project.img) {
+          img.src = project.img;
+          img.alt = project.title;
+          img.style.width = "300px";
+          img.style.marginBottom = "10px";
+        }
 
         const titleContainer = document.createElement('div');
         titleContainer.style.display = 'flex';
@@ -58,7 +65,7 @@ function renderProjects() {
         videoLink.target = "_blank";
 
         links.appendChild(githubLink);
-        links.appendChild(videoLink);
+        if (project.video) links.appendChild(videoLink);
 
         titleContainer.appendChild(title);
         titleContainer.appendChild(links);
@@ -68,7 +75,9 @@ function renderProjects() {
         description.style.textAlign = 'center';
         description.style.margin = "10px 0";
 
-        card.appendChild(img);
+        if (project.img) {
+          card.appendChild(img);
+        }
         card.appendChild(titleContainer);
         card.appendChild(description);
 
