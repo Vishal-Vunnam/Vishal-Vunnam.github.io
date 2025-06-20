@@ -1,5 +1,6 @@
 const projects = [
     {
+      img: "/img/coder.jpeg",
       title: "Python to x86 Assembly Compiler",
       link: "https://github.com/Vishal-Vunnam/python-to-x86-compiler",
       description: " Python to asm compiler written in Python 3.10. Supports dynamic typing, higher-order functions and register allocation optimizations. "

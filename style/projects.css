@@ -29,7 +29,7 @@ img {
     
     background-size: 400% 400%; /* Stretch the gradient to make it go through different colors */
     background-clip: text; /* Clip the background to the text */
-    color: rgb(3, 171, 0); /* Make the text color transparent to show the gradient */
+    color: rgb(255, 255, 255); /* Make the text color transparent to show the gradient */
     text-decoration: none; /* Remove the underline */
     display: inline-block; /* Ensure the text is treated as a block-level element */
     animation: colorCycle 110s; /* Animate the background */
@@ -94,12 +94,17 @@ h3 {
 
 }
 
+.project-card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+    box-shadow: 0 0 15px rgb(255, 255, 255); /* Increase shadow on hover */
+}
+
  a, p, h3, h2 {
     color: rgb(6, 6, 6);
     font-style: none;
     text-decoration: none;
     font-family: Consolas, Courier, monospace;
-    color: rgb(3, 171, 0);
+    color: rgb(255, 255, 255);
     text-shadow: 0px 0px 10px rgb(3, 171, 0);
 }
 .project-card a:hover {

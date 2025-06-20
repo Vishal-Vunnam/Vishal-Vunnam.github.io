@@ -143,6 +143,8 @@ body {
 }
 
 .profile img {
+    border: 2px solid black; /* Adds a slight black border around the image */
+
 }
 
 .profile img:hover {
